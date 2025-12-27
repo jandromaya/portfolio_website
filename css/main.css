@@ -2,51 +2,6 @@
   font-family: "PIXELIFY_SANS";
   src: url("../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf");
 }
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center;
-  }
-  main .lg-heading {
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0;
-  }
-  ul.menu-nav.show,
-  div.menu-branding.show {
-    transform: translate3d(0, 0, 0);
-  }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px;
-  }
-  .menu-branding {
-    height: 40vh;
-    transform: translate3d(100%, 0, 0);
-  }
-  .menu-branding .portrait {
-    background: url("../img/portrait_small.jpg");
-    width: 150px;
-    height: 150px;
-    background-position: center center;
-    background-size: 100%;
-  }
-  .about-info {
-    grid-template-areas: "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr;
-  }
-}
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh;
-  }
-}
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -97,7 +52,7 @@
 .menu-nav {
   margin: 0;
   padding: 0;
-  background: rgb(237.15, 237.15, 237.15);
+  background: rgba(237.15, 237.15, 237.15, 0.9);
   list-style: none;
   transform: translate3d(0, -100%, 0);
   transition: all 0.5s ease-out;
@@ -105,8 +60,20 @@
 .menu-nav.show {
   transform: translate3d(0, 0, 0);
 }
+.menu-branding {
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.5s ease-out;
+  transform: translate3d(0, 100%, 0);
+}
+.menu-branding.show {
+  transform: translate3d(0, 0, 0);
+}
+.menu-branding .label {
+  font-size: 2rem;
+  color: #000;
+}
 .menu .nav-item {
-  transform: translate3d(600px, 0, 0);
+  transform: translate3d(100%, 0, 0);
   transition: all 0.5s ease-out;
 }
 .menu .nav-item.show {
@@ -146,6 +113,61 @@
   transition-delay: 0.4s;
 }
 
+@media screen and (min-width: 1171px) {
+  main .lg-heading {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  main .lg-heading {
+    font-size: 6rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  main .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+    font-size: 4rem;
+  }
+  main .sm-heading {
+    font-size: 1.5rem;
+  }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  ul.menu-nav.show,
+  div.menu-branding.show {
+    transform: translate3d(0, 0, 0);
+  }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+  }
+  .menu-branding .portrait {
+    background: url("../img/portrait_small.jpg");
+    width: 0px;
+    height: 0px;
+    background-position: center center;
+    background-size: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -154,6 +176,8 @@ body#bg-img {
   background: url(../img/me_working.JPG);
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 body#bg-img:after {
   content: "";
@@ -163,16 +187,17 @@ body#bg-img:after {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
 }
 body {
   background: #fff;
-  background-size: 80%;
   color: #000;
   height: 100%;
   margin: 0;
   font-family: "PIXELIFY_SANS", sans-serif;
   line-height: 1.5;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -180,12 +205,13 @@ h1, h2, h3 {
   font-weight: 400;
 }
 h1.lg-heading, h2.lg-heading, h3.lg-heading {
-  font-size: 6rem;
+  color: #000;
 }
 h1.sm-heading, h2.sm-heading, h3.sm-heading {
   margin-bottom: 2rem;
   padding: 0.2rem 1rem;
   background: hsla(0, 0%, 102%, 0.5);
+  color: #000;
 }
 
 a {
@@ -204,8 +230,8 @@ header {
 }
 
 main {
-  padding: 4rem;
-  min-height: calc(100vh - 60px);
+  padding: 1rem;
+  height: 100%;
 }
 main .icons {
   margin-top: 1rem;
@@ -223,6 +249,12 @@ main#home {
 }
 main#home h1 {
   margin-top: 20vh;
+}
+main#portfolio, main#about {
+  overflow: hidden;
+}
+main#portfolio h1, main#about h1 {
+  margin-top: 8vh;
 }
 
 .about-info {
@@ -244,8 +276,21 @@ main#home h1 {
 .about-info .job-3 {
   grid-area: job3;
 }
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .about-info {
+    grid-template-areas: "bio bio bio" "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1171px) {
+  .about-info {
+    grid-template-areas: "bio bio bio" "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .about-info .job {
   background-color: rgb(235.875, 235.875, 235.875);
+  border-radius: 5%;
   padding: 0.5rem;
   border-bottom: #d50032 3px solid;
 }
@@ -254,6 +299,21 @@ main#home h1 {
   display: grid;
   gap: 0.7rem;
   grid-template-columns: 1fr;
+}
+@media screen and (max-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .projects img {
   width: 100%;
@@ -273,37 +333,6 @@ main#home h1 {
 .projects .item a:hover {
   color: #d50032;
   transition: all 0.5s ease-out;
-}
-
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem;
-}
-.boxes div {
-  font-size: 2rem;
-  border: 3px #000 solid;
-  padding: 1.5rem 2.5rem;
-  margin-bottom: 3rem;
-  transition: all 0.5s ease-out;
-}
-.boxes div:hover {
-  padding: 0.5rem 0.5rem;
-  background: #d50032;
-  color: #fff;
-}
-.boxes div:hover span {
-  color: #000;
-}
-
-#main-footer {
-  text-align: center;
-  padding: 1rem;
-  background: rgb(229.5, 229.5, 229.5);
-  color: #000;
-  height: 60px;
 }
 
 /*# sourceMappingURL=main.css.map */
