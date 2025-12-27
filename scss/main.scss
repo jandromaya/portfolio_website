@@ -10,26 +10,29 @@
 body {
     @include config.background;
     background: config.$primary-color;
-    color: #fff;
+    color: config.set-text-color(config.$primary-color);
     height: 100%;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'PIXELIFY_SANS', sans-serif;
     line-height: 1.5;
+
+    width: 100%;
+    overflow-x: hidden;
 }
 
 // headings
 h1, h2, h3 {
     margin: 0;
     font-weight: 400;
-
     &.lg-heading {
-        font-size: 6rem;
+        color: config.set-text-color(config.$primary-color);
     }
 
     &.sm-heading {
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
         background: rgba(color.adjust(config.$primary-color, $lightness: 2%), 0.5);
+        color: config.set-text-color(config.$primary-color);
     }
 }
 
@@ -49,7 +52,7 @@ header {
 }
 
 main {
-    padding: 4rem;
+    padding: 1rem;
     height: 100%;
 
     .icons {
@@ -57,6 +60,7 @@ main {
 
         a {
             padding: 0.4rem;
+            color: config.set-text-color(config.$primary-color);
 
             &:hover {
                 color: config.$secondary-color;
@@ -71,4 +75,100 @@ main {
             margin-top: 20vh;
         }
     }
+
+    &#portfolio,
+    &#about {
+        overflow: hidden;
+        h1 {
+            margin-top: 8vh;
+        }
+    }
+}
+
+.about-info {
+    display: grid;
+    gap: 30px;
+
+    grid-template-areas: 
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+
+    grid-template-columns: 1fr;
+
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+
+    .job-1 {
+        grid-area: job1;
+    }
+
+    .job-2 {
+        grid-area: job2;
+    }
+
+    .job-3 {
+        grid-area: job3;
+    }
+
+    @include config.mediaLg {
+        grid-template-areas: 
+        'bio bio bio'
+        'job1 job2 job3';
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include config.mediaXl {
+        grid-template-areas:
+        'bio bio bio'
+        'job1 job2 job3';
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .job {
+        background-color: color.adjust(config.$primary-color, $lightness: -7.5%);
+        border-radius: 5%;
+        padding: 0.5rem;
+        border-bottom: config.$secondary-color 3px solid;
+    }
+}
+
+.projects {
+    display: grid;
+    gap: 0.7rem;
+    grid-template-columns: 1fr;
+
+    @include config.mediaMd { grid-template-columns: repeat(2, 1fr) };
+    @include config.mediaLg { grid-template-columns: repeat(3, 1fr) }; 
+    @include config.mediaXl { grid-template-columns: repeat(4,1fr) };
+
+    img {
+        width: 100%;
+        border: 3px config.set-text-color(config.$primary-color) solid;
+
+        &:hover {
+            opacity: 0.5;
+            @include config.easeOut;
+        }
+    }
+
+    .item {
+        margin-top: 1rem;
+
+        a {
+            padding: 0.4rem;
+            color: config.set-text-color(config.$primary-color);
+
+            &:hover {
+                color: config.$secondary-color;
+                @include config.easeOut();
+            }
+        }
+    }
+
 }

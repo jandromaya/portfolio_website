@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "PIXELIFY_SANS";
+  src: url("../fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf");
+}
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -10,7 +14,7 @@
   width: 28px;
   height: 3px;
   margin: 0 0 5px 0;
-  background: #fff;
+  background: #000;
   transition: all 0.5s ease-out;
 }
 .menu-btn.close {
@@ -48,7 +52,7 @@
 .menu-nav {
   margin: 0;
   padding: 0;
-  background: rgba(50.15, 50.15, 50.15, 0.9);
+  background: rgba(237.15, 237.15, 237.15, 0.9);
   list-style: none;
   transform: translate3d(0, -100%, 0);
   transition: all 0.5s ease-out;
@@ -57,31 +61,26 @@
   transform: translate3d(0, 0, 0);
 }
 .menu-branding {
-  background: rgba(68, 68, 68, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   transition: all 0.5s ease-out;
   transform: translate3d(0, 100%, 0);
 }
 .menu-branding.show {
   transform: translate3d(0, 0, 0);
 }
-.menu-branding .portrait {
-  width: 250px;
-  height: 250px;
-  background: url("../img/portrait.jpg");
-  border-radius: 50%;
-  border: solid 3px #eece1a;
-  background-position: center center;
-  background-size: 100%;
+.menu-branding .label {
+  font-size: 2rem;
+  color: #000;
 }
 .menu .nav-item {
-  transform: translate3d(600px, 0, 0);
+  transform: translate3d(100%, 0, 0);
   transition: all 0.5s ease-out;
 }
 .menu .nav-item.show {
   transform: translate3d(0, 0, 0);
 }
 .menu .nav-item.current > a {
-  color: #eece1a;
+  color: #d50032;
 }
 .menu .nav-link {
   display: inline-block;
@@ -90,12 +89,12 @@
   text-transform: uppercase;
   padding: 1rem 0;
   font-weight: 300;
-  color: #fff;
+  color: #000;
   text-decoration: none;
   transition: all 0.5s ease-out;
 }
 .menu .nav-link:hover {
-  color: #eece1a;
+  color: #d50032;
 }
 
 .nav-item:nth-child(1) {
@@ -114,6 +113,16 @@
   transition-delay: 0.4s;
 }
 
+@media screen and (min-width: 1171px) {
+  main .lg-heading {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  main .lg-heading {
+    font-size: 6rem;
+  }
+}
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
@@ -122,6 +131,10 @@
   main .lg-heading {
     line-height: 1;
     margin-bottom: 1rem;
+    font-size: 4rem;
+  }
+  main .sm-heading {
+    font-size: 1.5rem;
   }
   ul.menu-nav,
   div.menu-branding {
@@ -144,8 +157,8 @@
   }
   .menu-branding .portrait {
     background: url("../img/portrait_small.jpg");
-    width: 150px;
-    height: 150px;
+    width: 0px;
+    height: 0px;
     background-position: center center;
     background-size: 100%;
   }
@@ -163,6 +176,8 @@ body#bg-img {
   background: url(../img/me_working.JPG);
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 body#bg-img:after {
   content: "";
@@ -172,15 +187,17 @@ body#bg-img:after {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: rgba(68, 68, 68, 0.8);
+  background: rgba(255, 255, 255, 0.8);
 }
 body {
-  background: #444;
-  color: #fff;
+  background: #fff;
+  color: #000;
   height: 100%;
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "PIXELIFY_SANS", sans-serif;
   line-height: 1.5;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -188,12 +205,13 @@ h1, h2, h3 {
   font-weight: 400;
 }
 h1.lg-heading, h2.lg-heading, h3.lg-heading {
-  font-size: 6rem;
+  color: #000;
 }
 h1.sm-heading, h2.sm-heading, h3.sm-heading {
   margin-bottom: 2rem;
   padding: 0.2rem 1rem;
-  background: rgba(73.1, 73.1, 73.1, 0.5);
+  background: hsla(0, 0%, 102%, 0.5);
+  color: #000;
 }
 
 a {
@@ -208,11 +226,11 @@ header {
 }
 
 .text-secondary {
-  color: #eece1a;
+  color: #d50032;
 }
 
 main {
-  padding: 4rem;
+  padding: 1rem;
   height: 100%;
 }
 main .icons {
@@ -220,9 +238,10 @@ main .icons {
 }
 main .icons a {
   padding: 0.4rem;
+  color: #000;
 }
 main .icons a:hover {
-  color: #eece1a;
+  color: #d50032;
   transition: all 0.5s ease-out;
 }
 main#home {
@@ -230,6 +249,90 @@ main#home {
 }
 main#home h1 {
   margin-top: 20vh;
+}
+main#portfolio, main#about {
+  overflow: hidden;
+}
+main#portfolio h1, main#about h1 {
+  margin-top: 8vh;
+}
+
+.about-info {
+  display: grid;
+  gap: 30px;
+  grid-template-areas: "bio" "job1" "job2" "job3";
+  grid-template-columns: 1fr;
+}
+.about-info .bio {
+  grid-area: bio;
+  font-size: 1.5rem;
+}
+.about-info .job-1 {
+  grid-area: job1;
+}
+.about-info .job-2 {
+  grid-area: job2;
+}
+.about-info .job-3 {
+  grid-area: job3;
+}
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .about-info {
+    grid-template-areas: "bio bio bio" "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1171px) {
+  .about-info {
+    grid-template-areas: "bio bio bio" "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.about-info .job {
+  background-color: rgb(235.875, 235.875, 235.875);
+  border-radius: 5%;
+  padding: 0.5rem;
+  border-bottom: #d50032 3px solid;
+}
+
+.projects {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: 1fr;
+}
+@media screen and (max-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.projects img {
+  width: 100%;
+  border: 3px #000 solid;
+}
+.projects img:hover {
+  opacity: 0.5;
+  transition: all 0.5s ease-out;
+}
+.projects .item {
+  margin-top: 1rem;
+}
+.projects .item a {
+  padding: 0.4rem;
+  color: #000;
+}
+.projects .item a:hover {
+  color: #d50032;
+  transition: all 0.5s ease-out;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,11 +1,22 @@
+@use "sass:color";
 @use "config";
 // Widescreens
 @include config.mediaXl {
+    main {
+        .lg-heading {
+            font-size: 6rem;
+        }
+    }
     
 }
 
 // Desktops & Laptops
 @include config.mediaLg {
+    main {
+        .lg-heading {
+            font-size: 6rem;
+        }
+    }
 
 }
 
@@ -18,6 +29,11 @@
         .lg-heading {
             line-height: 1;
             margin-bottom: 1rem;
+            font-size: 4rem;
+        }
+
+        .sm-heading {
+            font-size: 1.5rem;
         }
     }
 
@@ -44,8 +60,8 @@
         
         .portrait {
             background: url('../img/portrait_small.jpg');
-            width: 150px;
-            height: 150px;
+            width: 0px;
+            height: 0px;
             background-position: center center;
             background-size: 100%;
         }
