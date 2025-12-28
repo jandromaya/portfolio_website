@@ -11,7 +11,7 @@ body {
     @include config.background;
     background: config.$primary-color;
     color: config.set-text-color(config.$primary-color);
-    height: 100%;
+    min-height: 100vh;
     margin: 0;
     font-family: 'PIXELIFY_SANS', sans-serif;
     line-height: 1.5;
