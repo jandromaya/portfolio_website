@@ -7,9 +7,12 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "sass": "sass scss:dist/css --watch"
+    "sass": "sass scss:dist/css --watch",
+    "homepage": "https://jandromaya.github.io/portfolio_website",
+    "publish": "gh-pages -d dist/"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "sass": "^1.97.1"
   }
 }
