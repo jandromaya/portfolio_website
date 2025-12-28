@@ -192,7 +192,7 @@ body#bg-img:after {
 body {
   background: #fff;
   color: #000;
-  height: 100%;
+  min-height: 100vh;
   margin: 0;
   font-family: "PIXELIFY_SANS", sans-serif;
   line-height: 1.5;
