@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Musical Chessboard</title>
+</head>
+<body>
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="label">
+                    <p>Menu</p>
+                </div>
+            </div>
+            <ul class="menu-nav">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">
+                        About Me
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../portfolio.html" class="nav-link">
+                        Portfolio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!" class="nav-link">
+                        Staff Only
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="project-page">
+        <h1 class="lg-heading">
+            Musical <span class="text-secondary">Chessboard</span>
+        </h1>
+        <div class="project-info">
+            <div class="gallery">
+                <h2 class="sm-heading">
+                    <span class="text-secondary">Gallery:</span>
+                </h2>
+                <div class="img-1">
+                    <a href="../img/chessboard/chessboard.JPG">
+                    <img src="../img/chessboard/chessboard.JPG" alt="Project photo">
+                    </a>
+                </div>
+                <div class="img-2">
+                    <a href="../img/chessboard/working_version.JPG">
+                    <img src="../img/chessboard/working_version.JPG" alt="Project photo">
+                    </a>
+                </div>
+                <div class="img-3">
+                    <a href="../img/chessboard/prototype.JPG">
+                        <img src="../img/chessboard/prototype.JPG" alt="Project photo">
+                    </a>
+                </div>
+                <a href="#!">
+                    <i class="fab fa-youtube"></i> See it in action
+                </a>
+                <a href="https://github.com/jandromaya/musical-chessboard">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="description">
+                <h2 class="sm-heading">
+                    <span class="text-secondary">About the project:</span>
+                </h2>
+                <p>My thesis project, "A Musical Chessboard," is a custom-built chessboard that can detect the state of a chess game, using the detected game state to inform the composition of an accompanying soundtrack in real time.</p>
+                <p>To detect the current game state, the board uses color detection. After a player's turn, an Arduino uses a photoresistor and LED fitted on each square to detect the color of the piece resting on that square. The Arduino generates a matrix from the color data and sends it to a game state processor using a serial connection.</p>
+                <p>Made using Python, the game state processor extract game state information from the Arduino's output matrices to create Forsyth-Edwards Notation (FEN) representation of the game. Finally, the game state processor sends the FEN representation to a chess AI agent (such as Stockfish) for analysis.</p>
+                <p>After receiving the AI analysis for the game, each player's current board and win probabiities are used as inputs in a computer music program made with MaxMSP.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        Copyright &copy: 2026
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
