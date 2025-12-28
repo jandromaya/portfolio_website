@@ -269,6 +269,7 @@ main#portfolio h1, main#about h1, main#project-page h1 {
 }
 .about-info .bio a {
   color: #000;
+  text-decoration: underline;
 }
 .about-info .bio a:hover {
   color: #d50032;
@@ -354,7 +355,6 @@ main#portfolio h1, main#about h1, main#project-page h1 {
 .project-info .gallery h2 {
   text-align: left;
   grid-column: 1/span 3;
-  margin-bottom: 10px;
 }
 .project-info .gallery img {
   width: 100%;
@@ -376,6 +376,13 @@ main#portfolio h1, main#about h1, main#project-page h1 {
 .project-info .description p {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.project-info .description a {
+  text-decoration: underline;
+  color: #000;
+}
+.project-info .description a:hover {
+  color: #d50032;
 }
 
 /*# sourceMappingURL=main.css.map */

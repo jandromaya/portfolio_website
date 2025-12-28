@@ -103,6 +103,7 @@ main {
         font-size: 1.5rem;
         a {
             color: config.set-text-color(config.$primary-color);
+            text-decoration: underline;
 
             &:hover {
                 color: config.$secondary-color;
@@ -194,7 +195,6 @@ main {
         h2 {
             text-align: left;
             grid-column: 1 / span 3;
-            margin-bottom: 10px;
         }
 
         img {
@@ -220,6 +220,15 @@ main {
         p {
             padding-left: 1rem;
             padding-right: 1rem;
+        }
+
+        a {
+            text-decoration: underline;
+            color: config.set-text-color(config.$primary-color);
+
+            &:hover {
+                color: config.$secondary-color;
+            }
         }
     }
 }

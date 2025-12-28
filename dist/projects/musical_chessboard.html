@@ -83,8 +83,9 @@
                 </h2>
                 <p>My thesis project, "A Musical Chessboard," is a custom-built chessboard that can detect the state of a chess game, using the detected game state to inform the composition of an accompanying soundtrack in real time.</p>
                 <p>To detect the current game state, the board uses color detection. After a player's turn, an Arduino uses a photoresistor and LED fitted on each square to detect the color of the piece resting on that square. The Arduino generates a matrix from the color data and sends it to a game state processor using a serial connection.</p>
-                <p>Made using Python, the game state processor extract game state information from the Arduino's output matrices to create Forsyth-Edwards Notation (FEN) representation of the game. Finally, the game state processor sends the FEN representation to a chess AI agent (such as Stockfish) for analysis.</p>
+                <p>Made using Python, the game state processor extracts game state information from the Arduino's output matrices to create a Forsyth-Edwards Notation (FEN) representation of the game. Finally, the game state processor sends the FEN representation to a chess AI agent (such as Stockfish) for analysis.</p>
                 <p>After receiving the AI analysis for the game, each player's current board and win probabiities are used as inputs in a computer music program made with MaxMSP.</p>
+                <p>That's the quick gist. You can see a more detailed explanation with figures and schematics by clicking <a href="../img/chessboard/thesis.pdf">here</a>.</p>
             </div>
         </div>
     </main>
