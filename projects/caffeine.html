@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>CAFFEINE</title>
+</head>
+<body>
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="label">
+                    <p>Menu</p>
+                </div>
+            </div>
+            <ul class="menu-nav">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">
+                        About Me
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../portfolio.html" class="nav-link">
+                        Portfolio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!" class="nav-link">
+                        Staff Only
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="project-page">
+        <h1 class="lg-heading">
+            CAFFEINE: <span class="text-secondary">Collaborative Affordable Framework for Experiments in Interactive Networked Electronics</span>
+        </h1>
+        <div class="project-info">
+            <div class="gallery">
+                <h2 class="sm-heading">
+                    <span class="text-secondary">Gallery:</span>
+                </h2>
+                <div class="img-1">
+                    <a href="../img/caffeine/prototype.png">
+                    <img src="../img/caffeine/prototype.png" alt="Project photo">
+                    </a>
+                </div>
+                
+                <a href="#!">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            <div class="description">
+                <h2 class="sm-heading">
+                    <span class="text-secondary">About the project:</span>
+                </h2>
+                <p>During my senior year at Yale, I researched and designed CAFFEINE (Collaborative Affordable Framework for Experiments in Interactive Networked Electronics) alongside my thesis advisor, professor Scott Petersen. Together, we co-authored a paper published in the Proceedings of the 2025 International Computer Music Conference (ICMC). Work on this project is on-going, and I have continued contributing since I graduated.</p>
+                <p>Below is the abstract. You can read the full paper by clicking <a href="../img/caffeine/CAFFEINE.pdf">here</a>.</p>
+                <p>CAFFEINE is a mixed hardware/software framework that enables real-time low-latency sonification of sensor data from wearable embedded systems. The framework utilizes a many-to-one network topology, allowing unlimited pods and clients, constrained only by hardware availability. Wireless, battery-powered pods, built around the ESP32 microcontroller platform, host sensor arrays that capture diverse data, including motion, sound, distance, and light. Data are transmitted to a broker program that routes them to registered clients for sonification or further processing. CAFFEINE prioritizes accessibility and affordability, designed for artists and musicians with minimal technical expertise. Its extensible architecture supports creative applications, from live movemen sonification to environmental data-driven compositions, reducing barriers to networked sensor technologies. The framework files and utilities can be found on the GitHub project.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        Copyright &copy: 2026
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
