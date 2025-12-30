@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <title>About Me</title>
+    <title>Staff Only</title>
 </head>
 <body>
     <header>
@@ -27,7 +27,7 @@
                         Home
                     </a>
                 </li>
-                <li class="nav-item current">
+                <li class="nav-item">
                     <a href="about.html" class="nav-link">
                         About Me
                     </a>
@@ -37,7 +37,7 @@
                         Portfolio
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item current">
                     <a href="staff.html" class="nav-link">
                         Staff Only
                     </a>
@@ -46,25 +46,23 @@
         </nav>
     </header>
 
-    <main id="about">
-        <h1 class="lg-heading">
-            About <span class="text-secondary">Me</span>
-        </h1>
-        <h2 class="sm-heading">
-            Who am I?
-        </h2>
-        <div class="about-info">
-             <div class="bio">
-                <h3 class="text-secondary">BIO</h3>
-                <p>I'm Alejandro! I studied Electrical Engineering and Computer Science at Yale University, graduating with the class of 2025. At Yale, I began working on embedded systems and now I can't stop. You can see some of my projects in the "Portfolio" section of this website, and you can see my resume by clicking <a href="resume.pdf">here</a>.</p>
-             </div>
+    <main id="staff">
+        <div class="result" id="result-txt">
+            <p>This text should change</p>
+        </div>
+        <div>
+            <input type="time" id="input">
+            <input type="button" id="ready-btn" value="Set time">
+        </div>
+        <div>
+            <input type="checkbox" id="enable" name="enable">
+            <label for="enable">Enable Alarm</label>
         </div>
     </main>
 
-    <footer id="main-footer">
-        Copyright &copy: 2026
-    </footer>
-
     <script src="js/main.js"></script>
+    <script src="js/firebase.js"></script>
+    <script type="module" src="js/firebase.js"></script>
+    
 </body>
 </html>
