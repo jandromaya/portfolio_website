@@ -2,7 +2,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js"
+import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,15 +20,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const auth = getAuth();
 
 // Initializing UI elements I want to interact with
 const readyBtn = document.getElementById('ready-btn')
 const resultTxt = document.getElementById('result-txt');
 const input = document.getElementById('input');
 const checkbox = document.getElementById('enable');
-
-readyBtn.addEventListener('click', setDatabase);
-checkbox.addEventListener('click', setEnabled);
 
 // Setting the "enabled" property
 function setEnabled() {
@@ -67,5 +67,23 @@ async function readDatabase() {
   }
 }
 
+async function loginAdmin() {
+  const email = "alejandro.mayagoitia614@gmail.com";
+  const password = prompt("Enter password");
+
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+}
+
 readyBtn.addEventListener('click', setDatabase);
+checkbox.addEventListener('change', setEnabled);
 window.addEventListener('load', readDatabase);
+window.addEventListener('load', loginAdmin);
