@@ -76,14 +76,16 @@ async function loginAdmin() {
     // Signed in 
     const user = userCredential.user;
     // ...
+    readDatabase();
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    resultTxt.textContent = "Login failed: " + errorCode + errorMessage;
   });
 }
 
 readyBtn.addEventListener('click', setDatabase);
 checkbox.addEventListener('change', setEnabled);
-window.addEventListener('load', readDatabase);
+//window.addEventListener('load', readDatabase);
 window.addEventListener('load', loginAdmin);
