@@ -39,8 +39,9 @@ function setDatabase() {
   const time = input.value;
   const [hour, min] = time.split(":");
 
-  set(ref(database, 'alarm/hour'), hour);
-  set(ref(database, 'alarm/minute'), min);
+
+  set(ref(database, 'alarm/hour'), parseInt(hour));
+  set(ref(database, 'alarm/minute'), parseInt(min));
   set(ref(database, 'alarm/last_updated'), Date.now());
 
   resultTxt.textContent = "Alarm now set to " + hour + ":" + min;
