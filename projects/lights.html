@@ -55,7 +55,21 @@
                 <h2 class="sm-heading">
                     <span class="text-secondary">Gallery:</span>
                 </h2>
-                <p>Photos coming soon!</p>
+                <div class="img-1">
+                    <a href="../img/lights_alarm/switch.gif">
+                        <img src="../img/lights_alarm/switch.gif" alt="Project photo">
+                    </a>
+                </div>
+                <div class="img-2">
+                    <a href="../img/lights_alarm/system.JPG">
+                        <img src="../img/lights_alarm/system.JPG" alt="Project photo">
+                    </a>
+                </div>
+                <div class="img-1">
+                    <a href="../img/lights_alarm/screenshot.PNG">
+                        <img src="../img/lights_alarm/screenshot.PNG" alt="Project photo">
+                    </a>
+                </div>
                 <a href="https://github.com/jandromaya/light_alarm">
                     <i class="fab fa-github"></i> GitHub
                 </a>
@@ -64,9 +78,10 @@
                 <h2 class="sm-heading">
                     <span class="text-secondary">About the project:</span>
                 </h2>
-                <p>This is my latest project and a current work in progress. The project had a simple start&#8212I didn't want to get out of my cozy bed to flip the light switch before sleeping at night. To fix that, I built a motorized light switcher that I can control using a remote control.</p>
-                <p>Nowadays, the project has evolved somewhat. Using timer wakeups, I added alarm clock functionality to the system, so it can wake me up in the mornings by flipping my light switch. I am currently working on adding a web interface so I can easily control the alarm function.</p>
-                <p>This project is not done yet, so come back for more details soon!</p>
+                <p>This is a personal lighting control and alarm clock system. The project had a simple start&#8212I didn't want to get out of my cozy bed to flip the light switch before sleeping at night. To fix that, I built a motorized light switcher that I can control using an infrared remote.</p>
+                <p>Shortly after this, I realized my room was quite dark when I woke up in the morning, making it difficult to stay awake. That morning darkness inspired an alarm clock function, which lets me customize times when I want the lights to turn on through a web interface. </p>
+                <p>I made the initial remote-controlled light switcher using an ESP32 and ESP-IDF, a servo, and IR receivers/transmitters (i.e., NEC communication). The alarm clock feature entailed creating a frontend (pictured above) that controls a Firebase Realtime Database, with ESP32 using a WiFi connection and HTTP requests to read the custom alarm settings.</p>
+                <p>In the future, I hope to add an enclosure to this project or integrate a motor that can control my curtains.</p>
             </div>
         </div>
     </main>
