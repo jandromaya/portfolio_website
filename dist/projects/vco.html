@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Voltage Controlled Oscillator</title>
+</head>
+<body>
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="label">
+                    <p>Menu</p>
+                </div>
+            </div>
+            <ul class="menu-nav">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../about.html" class="nav-link">
+                        About Me
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../portfolio.html" class="nav-link">
+                        Portfolio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!" class="nav-link">
+                        Staff Only
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="project-page">
+        <h1 class="lg-heading">
+            Voltage <span class="text-secondary">Controlled</span> Oscillator
+        </h1>
+        <div class="project-info">
+            <div class="gallery">
+                <h2 class="sm-heading">
+                    <span class="text-secondary">Gallery:</span>
+                </h2>
+                <div class="img-1">
+                    <a href="../img/vco/vco_hand.jpg">
+                        <img src="../img/vco/vco_hand.jpg" alt="Project photo">
+                    </a>
+                </div>
+                <div class="img-2">
+                    <a href="../img/vco/vco_ckt.JPG">
+                        <img src="../img/vco/vco_ckt.JPG" alt="Project photo">
+                    </a>
+                </div>
+                <a href="https://drive.google.com/file/d/1RTg8ESfpMIJFdjvrgRek1MSNMh-gSM8f/view?usp=sharing">
+                    <i class="fab fa-youtube"></i> See it in action
+                </a>
+            </div>
+            <div class="description">
+                <h2 class="sm-heading">
+                    <span class="text-secondary">About the project:</span>
+                </h2>
+                <p>This is a homemade voltage controlled oscilattor built on breadboards (i.e., a noise generator whose pitch can be controlled using signals of different voltages). I built this in my sophomore year of college by following online tutorials, namely tutorials by Moritz Klein.</p>
+                <p>I made a few changes to the design to fit the components available to me at the time, debugging issues using oscilloscopes and the speaker's output. Above, you can see a photo of the circuit for this project.</p>
+                <p>To briefly explain, the oscillator works by controlling the feedback voltage of a circuit featuring a capacitor and a 555 timer. This circuit creates sawtooth waves that can be controlled with a voltage generator. In the photos and video above, the voltage generator used is a keyboard with a CV out port.</p>
+                <p>If you click on the "See it in action" button, you can watch a video and hear how the oscillator sounds! </p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        Copyright &copy: 2026
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
